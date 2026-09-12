@@ -5,7 +5,7 @@ const categories = [
     products: [
       {
         image: "./assets/img/veggie-burger.jpg",
-        name: "Veggie mushroom black Burger",
+        name: "Veggie black Burger",
         description: "Mixed green salad, Tomatoes, Edamame, Mushrooms",
         price: 16.9,
       },

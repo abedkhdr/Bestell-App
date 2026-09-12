@@ -37,3 +37,145 @@ header button span {
   height: 2px;
   background-color: var(--color-text-secondary);
 }
+
+.hero-section {
+  width: 100%;
+  height: 350px;
+  margin-bottom: 0;
+}
+
+.hero-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.shop-info {
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+}
+
+.shop-info h1 {
+  font-family: palanquin dark;
+  font-weight: 700;
+  font-size: 48px;
+  color: var(--color-text-primary);
+}
+
+.shop-info h1 span {
+  color: var(--color-primary);
+}
+
+.shop-info p {
+  font-family: palanquin;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-text-primary);
+}
+
+#menu {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.category-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+  background-color: var(--color-primary);
+  padding: 0 100px;
+  height: 60px;
+}
+
+.category-section h2 {
+  color: var(--color-text-secondary);
+  font-family: palanquin;
+}
+
+.category-section img {
+  height: 90px;
+  width: 85px;
+  transform: translateY(-7px);
+}
+
+.product-section {
+  width: 700px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--color-secondary);
+  margin-bottom: 16px;
+  border-radius: 12px;
+  padding: 0 16px;
+}
+
+.product-section img {
+  width: 200px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.product-info {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.product-right {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-right: 2px;
+}
+
+.product-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 60px;
+}
+
+.product-section p {
+  font-family: palanquin;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--color-text-primary);
+}
+
+.product-right p {
+  font-family: palanquin;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.product-section h3 {
+  font-family: palanquin;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--color-text-primary);
+}
+
+.product-section button {
+  background-color: var(--color-text-secondary);
+  color: var(--color-text-primary);
+  width: 115px;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-family: palanquin;
+  font-weight: 600px;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
