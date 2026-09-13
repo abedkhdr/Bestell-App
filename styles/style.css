@@ -57,6 +57,16 @@ header button span {
   padding: 30px;
 }
 
+.shop-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  transform: translateY(-75px);
+  border: 8px solid;
+  border-color: var(--color-secondary);
+  margin-bottom: -85px;
+}
+
 .shop-info h1 {
   font-family: palanquin dark;
   font-weight: 700;
@@ -77,8 +87,9 @@ header button span {
 
 #menu {
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .category-section {
@@ -86,15 +97,17 @@ header button span {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 4px;
+  margin: 30px 0 20px;
   background-color: var(--color-primary);
-  padding: 0 100px;
   height: 60px;
 }
 
 .category-section h2 {
   color: var(--color-text-secondary);
   font-family: palanquin;
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 16px;
 }
 
 .category-section img {
@@ -175,7 +188,35 @@ header button span {
   border: none;
   cursor: pointer;
   font-family: palanquin;
-  font-weight: 600px;
+  font-weight: 600;
   font-size: 16px;
   margin-bottom: 30px;
+}
+
+.content {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.basket {
+  width: 440px;
+  height: 700px;
+  background-color: var(--color-text-primary);
+  border-radius: 16px 0 0 16px;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+}
+
+.basket h2 {
+  color: var(--color-secondary);
+  font-family: palanquin;
+  font-weight: 700;
+  font-size: 32px;
 }

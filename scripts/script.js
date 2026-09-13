@@ -2,7 +2,7 @@ const menu = document.getElementById("menu");
 
 function renderCategories() {
   for (let i = 0; i < categories.length; i++) {
-    menu.innerHTML += `
+    menu.innerHTML += `  
 <div class="category-section">
 <img src="${categories[i].image}" alt="${categories[i].name} icon">
 <h2>${categories[i].name}</h2>
