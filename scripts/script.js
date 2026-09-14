@@ -1,4 +1,5 @@
 const menu = document.getElementById("menu");
+const basket = document.getElementById("basket");
 
 function renderCategories() {
   for (let i = 0; i < categories.length; i++) {
@@ -23,7 +24,7 @@ function renderCategories() {
 </div>
 <div class="product-right" >
 <p>${categories[i].products[j].price.toFixed(2)} €</p>
-<button type="button">Add to basket </button>
+<button type="button" onclick="addToBasket(${i}, ${j})">Add to basket </button>
 </div>
 </div>
 </div>
@@ -33,3 +34,18 @@ function renderCategories() {
 }
 
 renderCategories();
+
+function addToBasket(categoryIndex, productIndex) {
+  const product = categories[categoryIndex].products[productIndex];
+  basket.innerHTML += `
+<div class="basket-item">
+      <p>${product.name}</p>
+      <p>${product.price.toFixed(2)}</p>
+<div>
+<button type="button">-</button>
+<p id="quantity">1</p>
+<button type="button">+</button>
+</div> 
+</div>
+`;
+}
