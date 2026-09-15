@@ -37,11 +37,24 @@
         <div class="basket-wrapper">
           <aside id="basket" class="basket">
             <h2>Your Basket</h2>
+            <div id="basket-items" class="basket-items-container"></div>
+            <div id="basket-summary" class="basket-summary"></div>
           </aside>
         </div>
       </div>
     </main>
-
+    <dialog closedby="any" id="order-dialog">
+      <button type="button" class="dialog-close" onclick="closeOrderDialog()">
+        x
+      </button>
+      <img
+        class="delivered-icon"
+        src="./assets/icons/delivered-icon.png"
+        alt="lieferwagen-icon"
+      />
+      <h2>Order confirmed!</h2>
+      <p>Your food is on the way!</p>
+    </dialog>
     <script src="./scripts/db.js"></script>
     <script src="./scripts/script.js"></script>
   </body>
