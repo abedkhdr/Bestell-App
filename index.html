@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,6 +43,23 @@
         </div>
       </div>
     </main>
+    <nav class="mobile-nav">
+      <button type="button">
+        <img src="./assets/icons/home-mobile.png" alt="Home" />
+      </button>
+
+      <button type="button">
+        <img src="./assets/icons/konto-mobile.png" alt="Profile" />
+      </button>
+
+      <button type="button">
+        <img src="./assets/icons/orders-mobile.png" alt="Menu" />
+      </button>
+
+      <button type="button" onclick="openMobileBasket()">
+        <img src="./assets/icons/basket-mobile.png" alt="Basket" />
+      </button>
+    </nav>
     <dialog closedby="any" id="order-dialog">
       <button type="button" class="dialog-close" onclick="closeOrderDialog()">
         x
@@ -56,6 +73,7 @@
       <p>Your food is on the way!</p>
     </dialog>
     <script src="./scripts/db.js"></script>
+    <script src="./scripts/template.js"></script>
     <script src="./scripts/script.js"></script>
   </body>
 </html>

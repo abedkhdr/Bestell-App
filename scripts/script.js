@@ -6,36 +6,12 @@ const basket = document.getElementById("basket");
 
 function renderCategories() {
   for (let i = 0; i < categories.length; i++) {
-    menu.innerHTML += `  
-<div class="category-section">
-<div class="category-content">
-
-<img src="${categories[i].image}" alt="${categories[i].name} icon">
-<h2>${categories[i].name}</h2>
-</div>
-</div>
-<div class="products-container" id="products-${i}"></div>
-`;
+    menu.innerHTML += getCategoryTemplate(i);
 
     const productsContainer = document.getElementById(`products-${i}`);
 
     for (let j = 0; j < categories[i].products.length; j++) {
-      productsContainer.innerHTML += `
-<div class="product-section">
-<img src= "${categories[i].products[j].image}" alt="${categories[i].products[j].name}">
-<div class="product-info">
-    
-<div class="product-left">
-<h3>${categories[i].products[j].name}</h3>
-<p>${categories[i].products[j].description}</p>
-</div>
-<div class="product-right" >
-<p>${categories[i].products[j].price.toFixed(2)} €</p>
-<button type="button" onclick="addToBasket(${i}, ${j})">Add to basket </button>
-</div>
-</div>
-</div>
- `;
+      productsContainer.innerHTML += getProductTemplate(i, j);
     }
   }
 }
@@ -81,48 +57,14 @@ function renderBasket() {
 
   if (basketItems.length === 0) {
     basketSummary.innerHTML = "";
-    basketItemsContainer.innerHTML = `
-    <div class="empty-basket">
-      <p>Nothing here yet.<br>Go ahead and choose something delicious!</p>
-      <img src="./assets/icons/basket.png" alt="Empty basket icon">
-    </div>
-  `;
+
+    basketItemsContainer.innerHTML = getEmptyBasketTemplate();
     return;
   }
   for (let i = 0; i < basketItems.length; i++) {
-    basketItemsContainer.innerHTML += `
-<div class="basket-item">
-  <div class="basket-product">
-    <p>${basketItems[i].quantity}x ${basketItems[i].product.name}</p>
-<p>${(basketItems[i].product.price * basketItems[i].quantity).toFixed(2)} €</p>
-</div>
-
-  <div class="quantity">
-    <button type="button" onclick="decreaseQuantity(${i})">-</button>
-    <p>${basketItems[i].quantity}</p>
-    <button type="button" onclick="increaseQuantity(${i})">+</button>
-  </div>
-</div>
-`;
+    basketItemsContainer.innerHTML += getBasketItemTemplate(i);
   }
-
-  basketSummary.innerHTML = `
-    <div class="basket-summary-row">
-    <p>Subtotal</p>
-    <p>${calculatePrice().toFixed(2)} €</p>
-  </div>
-
-  <div class="basket-summary-row">
-    <p>Delivery fee</p>
-    <p>4.99 €</p>
-  </div>
-  <div class="basket-total">
-  <p>Total</p>
-  <p>${(calculatePrice() + 4.99).toFixed(2)} €</p>
-</div>
-
-<button type="button" class="buy-button" onclick="buyNow()">Buy now (${(calculatePrice() + 4.99).toFixed(2)} €)</button>
-  `;
+  basketSummary.innerHTML = getBasketSummaryTemplate();
 }
 
 function calculatePrice() {
@@ -150,4 +92,16 @@ function buyNow() {
 function closeOrderDialog() {
   const orderDialog = document.getElementById("order-dialog");
   orderDialog.close();
+}
+
+function openMobileBasket() {
+  if (basket.style.display === "flex") {
+    basket.style.display = "none";
+  } else {
+    basket.style.display = "flex";
+  }
+}
+
+function closeMobileBasket() {
+  basket.style.display = "flex";
 }
